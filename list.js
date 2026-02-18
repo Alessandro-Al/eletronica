@@ -20,5 +20,5 @@ const LK_DESC = [
   "Verificadoras, Classificadoras, Aplicadores, Balanças",
   "Verificadoras, Contadores, Balanças",
   "Controladores, Balanças",
-  "Drop, RFID Barcode Reader, Step Motor driver"
+  "Drop, RFID Barcode Reader, Step Motor drivers"
 ];
