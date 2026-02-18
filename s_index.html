@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub Index</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+    }
+
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 16px;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 500px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      background: #eef5ff;
+      transform: translateY(-4px);
+    }
+
+    .title,
+    .versao {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .subtitle {
+      color: #555;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 id="pageTitle">Firmware</h1>
+    <p>Documentação Técnica</p>
+  </header>
+
+  <div class="container" id="cardsContainer">
+    <!-- Cards serão gerados pelo JS -->
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const dir = params.get('dir');   // Ex: LK300
+    const name = params.get('name');  // Ex: Firmware LK300
+
+    if (name) document.getElementById('pageTitle').innerText = name;
+
+    // Cria dinamicamente a tag <script> para carregar o fw.js correto
+    const script = document.createElement('script');
+    script.src = dir + '/fw.js';
+    script.onload = () => {
+      const container = document.getElementById('cardsContainer');
+
+      // Percorre todos os firmwares do fw.js carregado
+      for (const fw in FIRMWARES) {
+        const data = FIRMWARES[fw];
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.onclick = () => {
+          const url = 'firmware.html' + '?dir=' + dir +
+            '&fw=' + encodeURIComponent(fw) +
+            '&title=' + encodeURIComponent(data.title) +
+            '&versao=' + encodeURIComponent(data.versao) +
+            '&desc=' + encodeURIComponent(data.subtitle) +
+            '&name=' + encodeURIComponent(name);  // <-- adiciona aqui
+          location.href = url;
+        };
+
+        card.innerHTML = `
+      <span class="title">${data.title}</span>
+      <span class="versao">${data.versao}</span>
+      <div class="subtitle">${data.subtitle}</div>
+    `;
+
+        container.appendChild(card);
+      }
+    };
+    document.head.appendChild(script);
+  </script>
+
+</body>
+
+</html>

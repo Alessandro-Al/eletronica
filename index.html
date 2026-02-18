@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Documentação de Firmware</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+    }
+
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      /* alinha verticalmente */
+      gap: 20px;
+      /* espaço entre logo e texto */
+    }
+
+    .container {
+      padding: 40px;
+      max-width: 500px;
+      /*margin: auto; */
+    }
+
+
+
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      /* text-align: center; */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+      font-size: 22px;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      background: #eef5ff;
+      transform: translateY(-4px);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      font-weight: normal;
+      color: #555;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <header>
+    <h1>Documentação Técnica</h1>
+    <p>Firmwares e Controladores</p>
+  </header> -->
+
+
+
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo" class="logo">
+      <div class="header-text">
+        <h1>Documentação Técnica</h1>
+        <p>Firmwares e Controladores</p>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="container" id="lkCards">
+    <!-- Os cards serão gerados aqui -->
+  </div>
+
+
+  <script src="list.js"></script>
+
+  <script>
+
+    /* ===== FUNÇÃO PARA ABRIR O s_index ===== */
+    function openLK(index) {
+      const dir = LK_DIR[index];
+      const name = LK_NAMES[index];
+
+      // chama s_index.html passando os parâmetros
+      const url = `s_index.html?dir=${encodeURIComponent(dir)}&name=${encodeURIComponent(name)}`;
+      location.href = url;
+    }
+
+    /* ===== CRIA OS CARDS DINAMICAMENTE ===== */
+    const container = document.getElementById("lkCards");
+
+    LK_NAMES.forEach((name, i) => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.onclick = () => openLK(i);
+
+      card.innerHTML = `
+    <span class="title">${name}</span>
+    <div class="subtitle">${LK_DESC[i]}</div>
+  `;
+
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+
+</html>
