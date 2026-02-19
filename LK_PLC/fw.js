@@ -1,7 +1,7 @@
 const FIRMWARES = {
   lk120: {
     title: "LK120",
-    versao: "V1.3qwert",
+    versao: "V1.3",
     subtitle: "PLC Driver Step Motor via RS485"
   },
   lk050: {
