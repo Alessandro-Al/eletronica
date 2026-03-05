@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub Index</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="Logo" class="logo">
+      <div class="header-text">
+        <h1 id="pageTitle">Firmware</h1>
+        <p>Documentação Técnica</p>
+      </div>
+    </div>
+  </header>
+  <div class="container" id="lkCards">
+    <!-- Cards serão gerados pelo JS -->
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const dir = params.get('dir');   // Ex: LK300
+    const name = params.get('name');  // Ex: Firmware LK300
+    if (name) document.getElementById('pageTitle').innerText = name;
+    // Cria dinamicamente a tag <script> para carregar o fw.js correto
+      
+    const script = document.createElement('script');
+    script.src = dir + '/fw.js';
+    script.onload = () => {
+      const container = document.getElementById('lkCards');
+      // Percorre todos os firmwares do fw.js carregado
+      for (const fw in FIRMWARES) {
+        const data = FIRMWARES[fw];
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.onclick = () => {
+          const url = 'firmware.html' + '?dir=' + dir +
+            '&fw=' + encodeURIComponent(fw) +
+            '&title=' + encodeURIComponent(data.title) +
+            '&versao=' + encodeURIComponent(data.versao) +
+            '&desc=' + encodeURIComponent(data.subtitle) +
+            '&name=' + encodeURIComponent(name);  // <-- adiciona aqui
+          location.href = url;
+        };
+        card.innerHTML = `
+      <span class="title">${data.title}</span>
+      <span class="versao">${data.versao}</span>
+      <div class="subtitle">${data.subtitle}</div>`;
+        container.appendChild(card);
+      }
+    };
+    document.head.appendChild(script);
+  </script>
+</body>
+
+</html>

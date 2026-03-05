@@ -1,0 +1,58 @@
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+    }
+
+    header {
+        background: #003366;
+        color: #fff;
+        padding: 16px;
+    }
+
+    .logo {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        /* alinha verticalmente */
+        gap: 20px;
+        /* espaço entre logo e texto */
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 500px;
+    }
+
+    .card {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+        transition: all 0.2s ease;
+    }
+
+    .card:hover {
+        background: #eef5ff;
+        transform: translateY(-4px);
+    }
+
+    .title,
+    .versao {
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .subtitle {
+        /* font-size: 14px;
+      font-weight: normal; */
+        color: #555;
+        margin-top: 8px;
+    }
