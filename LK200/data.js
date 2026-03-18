@@ -126,7 +126,65 @@ const VP1200 = {
   ],
   plc: [
     { label: "LK050", title: "modulo de pesagem na com2" }
-  ]
+  ],
+
+  features: `
+   <b>Pesagem dinâmica</b><br>
+  • Leitura contínua da célula de carga.<br>
+  • Filtro digital para estabilização do peso.<br>
+  • Detecção automática de produto.<br>
+  <br>
+
+  <b>Controle de esteira</b><br>
+  • Liga/desliga motor da esteira.<br>
+  • Controle de velocidade.<br>
+  • Sincronização com pesagem.<br>
+  <br>
+
+  <b>Controle de aplicador</b><br>
+  • Operação configurável em diferentes modalidades.<br>
+  <br>
+
+  <b>Sistema de rejeito</b><br>
+  • Ativação automática para peso fora da faixa configurada.<br>
+  • Configuração de atraso e tempo de acionamento do rejeito.<br>
+  <br>
+
+  <b>Comunicação</b><br>
+  • Protocolo de comunicação para exportação de dados.<br>
+  <br>
+
+  <b>SSCC</b><br>
+  • Geração de SSCC conforme padrão GS1 e formatos configuráveis.<br>
+  • Impressão de etiquetas compatível com diversas impressoras.<br>
+  • Identificação de produto via GS1 ou outros formatos configuráveis.<br>
+  <br>
+
+  <b>Gerenciamento de produtos</b><br>
+  • Cadastro de múltiplos produtos.<br>
+  • Configuração de peso mínimo e máximo.<br>
+  • Desvio de produto para até 3 linhas diferentes.<br>
+  <br>
+
+  <b>Registro de produção</b><br>
+  • Contagem de peças.<br>
+  • Histórico de rejeitos.<br>
+  • Estatísticas de produção.<br>
+  <br>
+
+  <b>Interface de operador</b><br>
+  • Tela de configuração.<br>
+  • Status da máquina.<br>
+  • Alarmes e mensagens.<br>
+  <br>
+
+  <b>Diagnóstico</b><br>
+  • Supervisão remota para monitoramento do sistema.<br>
+  • Teste manual de atuadores.<br>
+  `
+
+
+
 };
 
 /* =========================================================
@@ -720,7 +778,32 @@ const CL3500 = {
     { label: "LK100R1 / LK110 FW: LK100_PLC1_2.hex", title: CL_2 },
     "LK100R2  + EXP FW: LK100V2.3-PLC.bin",
     "QUAL LK100R2 FW: LK100V1.4-B[4/6]-E[2/4]-Qty.bin",
-  ]
+  ],
+  features: `
+<b>Características principais</b><br>
+• Até 160 peças/minuto (fluxo simples).<br>
+• Até 320 peças/minuto (fluxo duplo).<br>
+• Resolução aproximada de 1 g.<br>
+• Comunicação Ethernet, RS-232 e USB.<br>
+• Estrutura em aço inox para indústria alimentícia.<br>
+• Operação com produto fresco ou congelado.<br>
+<br>
+<b>Algoritmo inteligente de fechamento de caixa</b><br>
+• Seleciona automaticamente o braço de classificação ideal.<br>
+• Otimiza a combinação de pesos para fechar caixas com alta precisão.<br>
+• Minimiza o sobrepeso total do pacote.<br>
+• Ajuste dinâmico conforme os pesos que chegam na esteira.<br>
+• Aumenta o rendimento e reduz perda de produto.<br>
+<br>
+<b>Simulador de classificação</b><br>
+• Executa no PC o mesmo algoritmo da máquina.<br>
+• Recebe um arquivo TXT contendo uma sequência de pesagens reais.<br>
+• Simula o funcionamento completo da classificadora.<br>
+• Testa diferentes configurações de braços e limites de peso.<br>
+• Calcula automaticamente a melhor configuração para aquele lote.<br>
+• Minimiza o sobrepeso e melhora o rendimento antes de aplicar na máquina.<br>
+<br>
+`
 };
 
 /* =========================================================
