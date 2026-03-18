@@ -61,7 +61,7 @@ const FIRMWARES = {
     },
     ap300: {
         title: "AP3[xx]",
-        versao: "V9.13_nck",
+        versao: "V9.14_nck",
         subtitle: "Impressora com Aplicador"
     },
     lk_205d1: {
