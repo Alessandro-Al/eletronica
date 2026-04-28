@@ -11,7 +11,7 @@ const FIRMWARES = {
   },
   ip: { 
     title: "IP", 
-    versao: "",
+    versao: "V2.3",
     subtitle: "plc" 
   },
   bal3: { 
