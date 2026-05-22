@@ -36,7 +36,7 @@ const FIRMWARES = {
     },
     lk205: {
         title: "LK20[x]",
-        versao: "5.0.2",
+        versao: "5.0.3",
         subtitle: "Controlador de Processo impressao dosagem hopper"
     },
     bt600: {
