@@ -11,7 +11,7 @@ const FIRMWARES = {
     },
     cl3500: {
         title: "CL350[x]",
-        versao: "V8.11.0",
+        versao: "V8.11.1",
         subtitle: "Classificadora de Piso com opção qualidade"
     },
     cp12000: {
