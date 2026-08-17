@@ -1,27 +1,27 @@
 const FIRMWARES = {
   vp1200: {
     title: "VP12[xx]",
-    versao: "V5.13",
+    versao: "",
     subtitle: "Verificadora de Peso"
   },
   cl3500: {
     title: "CL3500",
-    versao: "V5.13",
+    versao: "",
     subtitle: "Classificadora de Piso"
   },
   lk305: {
     title: "LK305",
-    versao: "V5.13",
+    versao: "",
     subtitle: "Balança Estática com Dosagem"
   },
   sorter: {
     title: "SORTER",
-    versao: "V5.13",
+    versao: "",
     subtitle: "Separador de Caixas"
   },
   ap300: {
     title: "AP3[xx]",
-    versao: "V5.13",
+    versao: "",
     subtitle: "Impressora com Aplicador"
   },
   mc5000: {
