@@ -28,5 +28,10 @@ const FIRMWARES = {
     title: "MC5000",
     versao: "V1.11",
     subtitle: "Balança multicabeçote"
+  },
+  vp4000: {
+    title: "VP4000",
+    versao: "5_20",
+    subtitle: "Verificadora de Peso 4 linhas"
   }
 };

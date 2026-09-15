@@ -5,7 +5,7 @@ const C = " -> precisa do sinal para habilitar as saídas, sem isso os acionamen
 
 const BASE_LK300 = {
   descricao: "ID FW:",
-  fw_id: "LK300R5_11",
+  fw_id: "LK300R5_xx",
   descricaoPlaca: {
     titulo: "Terminal Industrial LK300 Cortex-A9, Linux e Android, touchscreen.",
     hardware: [
@@ -28,6 +28,7 @@ const BASE_LK300 = {
   portas: [
     "47000 – Visor",
     "49000 – Integra",
+     "80 – web",
     "USB"
   ],
   memoria: [
@@ -98,36 +99,36 @@ const VP1200 = {
     { label: "LK050 FW ID: lenke_mp_4_3.bin", title: "modulo pesagem  na serial 3" },
     { label: "LK100R2 FW ID: LK100V2.3-PLC.bin", title: VP1200_NOTES.note4 },
   ],
-//   dicas: [
-//     "Se visor não comunica, verifique porta 47000",
-//     "Rejeito não atua → checar tempo mínimo",
-//     "Peso instável → aterramento"
-//   ],
-//   configuracao: `
-// <b>Configurações obrigatórias</b><br>
-// • Tipo de produto<br>
-// • Faixa de peso<br>
-// • Tempo de rejeito<br><br>
-// <b>Parâmetros críticos</b><br>
-// • Delay do sensor<br>
-// • Janela de leitura<br>
-// • Tempo de esteira
-// `,
-//   diagnostico: `
-// <b>Testes disponíveis</b><br>
-// • Teste de entradas<br>
-// • Teste de saídas<br>
-// • Simulação de produto<br><br>
-// <b>Erros comuns</b><br>
-// • Sensor invertido<br>
-// • Balança não estável
-// `,
-//   instalacao: {
-//     test1: "t1",
-//     test2: "t2",
-//     test3: "t3",
+  //   dicas: [
+  //     "Se visor não comunica, verifique porta 47000",
+  //     "Rejeito não atua → checar tempo mínimo",
+  //     "Peso instável → aterramento"
+  //   ],
+  //   configuracao: `
+  // <b>Configurações obrigatórias</b><br>
+  // • Tipo de produto<br>
+  // • Faixa de peso<br>
+  // • Tempo de rejeito<br><br>
+  // <b>Parâmetros críticos</b><br>
+  // • Delay do sensor<br>
+  // • Janela de leitura<br>
+  // • Tempo de esteira
+  // `,
+  //   diagnostico: `
+  // <b>Testes disponíveis</b><br>
+  // • Teste de entradas<br>
+  // • Teste de saídas<br>
+  // • Simulação de produto<br><br>
+  // <b>Erros comuns</b><br>
+  // • Sensor invertido<br>
+  // • Balança não estável
+  // `,
+  //   instalacao: {
+  //     test1: "t1",
+  //     test2: "t2",
+  //     test3: "t3",
 
-//   }
+  //   }
 };
 
 
@@ -289,7 +290,7 @@ const MC5000 = {
 
   visao: `
       <b>Características gerais</b><br>
-`,
+    `,
 
   saidas: [
     { label: " a 8 devaidor ou rejeito" },
@@ -302,6 +303,34 @@ const MC5000 = {
 
 };
 
+const VP4000 = {
+  ...BASE_LK300,
+
+  visao: `
+  <b>Características gerais</b><br>
+  Verificador de peso com integração de dados via rede Ethernet, capaz de
+  realizar simultaneamente a pesagem em até 4 linhas, utilizando 4 balanças
+  de forma independente e simultânea.
+    `,
+  entradas: [
+    { label: "Sensor de caixa linha 1" },
+    { label: "Sensor de caixa linha 2" },
+    { label: "Sensor de caixa linha 3" },
+    { label: "Sensor de caixa linha 4" }
+  ],
+
+  serial: [
+    { label: "DEB" },
+    { label: "LK050 linha 2", title: "Modulo externo" },
+    { label: "LK050 linha 3", title: "Modulo externo" },
+    { label: "LK050 linha 1", title: "Modulo interno" },
+    { label: "LK050 linha 4", title: "Modulo externo" },
+  ],
+ portas: [
+    ...BASE_LK300.portas,
+    { label: "47001", title: "Envio pesagem" }
+  ],
+};
 /* ================= DATA ================= */
 const DATA = {
   vp1200: VP1200,
@@ -310,4 +339,5 @@ const DATA = {
   sorter: SORTER,
   ap300: AP300,
   mc5000: MC5000,
+  vp4000: VP4000,
 };
