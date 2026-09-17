@@ -16,7 +16,7 @@ const FIRMWARES = {
   },
   sorter: {
     title: "SORTER",
-    versao: "5_20",
+    versao: "5_22",
     subtitle: "Separador de Caixas"
   },
   ap300: {
