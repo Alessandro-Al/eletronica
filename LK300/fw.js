@@ -31,7 +31,7 @@ const FIRMWARES = {
   },
   vp4000: {
     title: "VP4000",
-    versao: "5_22",
+    versao: "5_23",
     subtitle: "Verificadora de Peso 4 linhas"
   }
 };
