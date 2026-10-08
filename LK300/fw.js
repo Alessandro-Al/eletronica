@@ -6,7 +6,7 @@ const FIRMWARES = {
   },
   cl3500: {
     title: "CL3500",
-    versao: "5_23",
+    versao: "5_24",
     subtitle: "Classificadora de Piso"
   },
   lk305: {
