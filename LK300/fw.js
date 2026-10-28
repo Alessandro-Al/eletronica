@@ -1,7 +1,7 @@
 const FIRMWARES = {
   vp1200: {
     title: "VP12[xx]",
-    versao: "5_24",
+    versao: "5_25",
     subtitle: "Verificadora de Peso"
   },
   cl3500: {
