@@ -21,7 +21,7 @@ const FIRMWARES = {
   },
   ap300: {
     title: "AP3[xx]",
-    versao: "5_24",
+    versao: "5_25",
     subtitle: "Impressora com Aplicador"
   },
   mc5000: {
