@@ -1,7 +1,7 @@
 const FIRMWARES = {
   vp1200: {
     title: "VP12[xx]",
-    versao: "5_25",
+    versao: "5_30",
     subtitle: "Verificadora de Peso"
   },
   cl3500: {
@@ -33,5 +33,10 @@ const FIRMWARES = {
     title: "VP4000",
     versao: "5_25",
     subtitle: "Verificadora de Peso 4 linhas"
+  },
+    bt600: {
+    title: "BT600",
+    versao: "5_25",
+    subtitle: "BALANÇA DE TENDAL"
   }
 };

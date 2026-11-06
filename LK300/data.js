@@ -33,7 +33,7 @@ const BASE_LK300 = {
   ],
   memoria: [
     "Produtos: 800",
-    "Apontamentos: 10.000"
+    "Apontamentos: 1.000.000"
   ],
   images: {
     visao: "./img/placa.png",
@@ -331,6 +331,28 @@ const VP4000 = {
     { label: "47001", title: "Envio pesagem" }
   ],
 };
+
+const BT600 = {
+  ...BASE_LK300,
+
+  visao: `
+  <b>Características gerais</b><br>
+    `,
+  entradas: [
+    { label: "Balança" },
+   
+  ],
+
+  serial: [
+    { label: "DEB" },
+  ],
+ portas: [
+    ...BASE_LK300.portas,
+    { label: "47001", title: "Envio pesagem" }
+  ],
+};
+
+
 /* ================= DATA ================= */
 const DATA = {
   vp1200: VP1200,
@@ -340,4 +362,5 @@ const DATA = {
   ap300: AP300,
   mc5000: MC5000,
   vp4000: VP4000,
+  bt600: BT600,
 };
