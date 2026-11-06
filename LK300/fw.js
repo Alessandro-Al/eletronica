@@ -11,7 +11,7 @@ const FIRMWARES = {
   },
   lk305: {
     title: "LK305",
-    versao: "5_25",
+    versao: "5_30",
     subtitle: "Balança Estática com Dosagem"
   },
   sorter: {
