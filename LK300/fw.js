@@ -26,7 +26,7 @@ const FIRMWARES = {
   },
   mc5000: {
     title: "MC5000",
-    versao: "5_25",
+    versao: "5_30",
     subtitle: "Balança multicabeçote"
   },
   vp4000: {
