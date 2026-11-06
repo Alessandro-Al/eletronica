@@ -36,7 +36,7 @@ const FIRMWARES = {
   },
     bt600: {
     title: "BT600",
-    versao: "5_25",
+    versao: "5_30",
     subtitle: "BALANÇA DE TENDAL"
   }
 };
