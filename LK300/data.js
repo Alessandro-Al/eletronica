@@ -7,7 +7,7 @@ const BASE_LK300 = {
   descricao: "ID FW:",
   fw_id: "LK300R5_xx",
   descricaoPlaca: {
-    titulo: "Terminal Industrial LK300 Cortex-A9, Linux e Android, touchscreen.",
+    titulo: "Terminal industrial LK300 com processador Cortex-A9, tela touchscreen e suporte aos sistemas operacionais Linux e Android.",
     hardware: [
       { label: "CPU:", valor: " NXP i.MX6 – Cortex-A9 1GHz" },
       { label: "Memória RAM: ", valor: "1024MB DDR3" },
@@ -18,11 +18,11 @@ const BASE_LK300 = {
       { label: "USB: ", valor: "2x USB 2.0 (1 Host, 1 OTG)" },
       { label: "Seriais: ", valor: "4: RS232 - 1:RS232/RS485 " },
       { label: "Áudio:", valor: " Headphone / Line Out" },
-      { label: "Entrdas:", valor: " 4 optoacopladas" },
-      { label: "Saidas:", valor: " 8 optoacopladas" },
+      { label: "Entradas:", valor: " 4 optoacopladas" },
+      { label: "Saídas:", valor: " 8 optoacopladas" },
       { label: "Alimentação:", valor: " 12-24V" },
       { label: "Sistemas operacionais:", valor: "  Yocto Linux, Debian Linux e Android" },
-      { label: "Balança:", valor: "  modulo de pesagem integrado LK050 opcoinal" },
+      { label: "Balança:", valor: "  Módulo de pesagem LK050 integrado (opcional)" },
     ],
   },
   portas: [
@@ -47,16 +47,16 @@ const BASE_LK300 = {
 
 /* ================= VP1200 ================= */
 const VP1200_NOTES = {
-  note1: " impressora é via rede se definido IP ou é direcionada na COM4",
-  note2: " sensor aplicador e opcional, e tem 3 modalidade (ver manual para detalhe)",
-  note3: " ver tabela de configuração saídas para maior detalhes. Aux padrão função Sorter.",
+  note1: " Impressora via rede, quando configurado o endereço IP, ou pela COM4",
+  note2: " Sensor do aplicador opcional, e tem 3 modalidade (ver manual para detalhe)",
+  note3: " Consulte a tabela de configuração das saídas para mais detalhes. Aux padrão função Sorter.",
   note4: " usa PLC na serial 4  para controle de aplicador",
 };
 
 const PERFIL_VERIFICADORA = {
   subfw: [
     { label: "[00] (padrão): 2 leitores de entrada" },
-    { label: "[15]: 1 leitor de entrada (C1) + 1 saída (C2)" }
+    { label: "[15]: 1 leitor de entrada (C1) e 1 leitor de saída (C2)." }
   ],
   entradas: [
     { label: "Sensor Presença caixa" },
@@ -160,8 +160,8 @@ const CL3500 = {
       • VISOR: Compatível C_Visor9_00<br><br>
     `,
   observacoes: [
-    "Máquinas com apenas 8 braços podem dispensar PLC, utiliza somente as saídas do LK300",
-    "PLC para controlo de ate 88 entre saídas e entradas",
+    "Pode operar com até 8 braços sem necessidade de PLC.",
+    "PLC para Controle de até 88 entradas e saídas",
     "USB: Não"
   ],
 
@@ -175,9 +175,9 @@ const CL3500 = {
 
 
 const LK305_NOTES = {
-  note1: " impressora é via rede se definido IP ou é direcionada na COM4",
-  note2: " sinal NC normalmente fechado NA normalmente aberto",
-  note3: " dosagem ou hopper e selecionada com parâmetro de sistema as saídas de 1 a 8 são controladas conforme modalidade",
+  note1: " Impressora via rede, quando configurado o endereço IP, ou pela COM4",
+  note2: " Sinal NC normalmente fechado NA normalmente aberto",
+  note3: " Dosagem ou hopper é selecionada com parâmetro de sistema as saídas de 1 a 8 são controladas conforme modalidade",
 
 };
 
@@ -185,15 +185,15 @@ const LK305 = {
   ...BASE_LK300,
   visao: [
     "Balança estática com dosagem integrada",
-    "alimentacao: 110~220 VAC 50/60Hz",
-    "consumo: 25 W",
-    "protecao: IP66",
-    "plataformas: 1 a 4 células de carga",
-    "tipo_comunicacao: Ethernet, RS232",
-    "dimensoes: 0,5m x 1,6m x 1,1m (LxAxP)",
-    "peso: 70 kg",
-    "temperatura operacao: +5 a +40°C",
-    "pressao atmosferica: 70 a 102 kPa"
+    "Alimentação: 110~220 VAC 50/60Hz",
+    "Consumo: 25 W",
+    "Proteção: IP66",
+    "Plataformas: 1 a 4 células de carga",
+    "Tipo de comunicação: Ethernet, RS232",
+    "Dimensoes: 0,5m x 1,6m x 1,1m (LxAxP)",
+    "Peso: 70 kg",
+    "Temperatura de operação: +5 a +40°C",
+    "Pressão atmosférica: 70 a 102 kPa"
   ],
 
   serial: [
@@ -284,8 +284,7 @@ const AP300 = {
   visao: `
       <b>Características gerais</b><br>
       • Tipo: Impressora com aplicador<br>
-      • VISOR: Compatível<br><br>
-	  <b>SUBFW disponíveis</b><br>
+      • VISOR: Compatível<br>
     `,
 
   observacoes: [
@@ -307,8 +306,15 @@ const MC5000 = {
     `,
 
   saidas: [
-    { label: " a 8 devaidor ou rejeito" },
-  ],
+  { label: "Produto" },    // OUT_PROD
+  { label: "Rejeito" },    // OUT_REJE
+  { label: "Motor" },      // OUT_MOTOR
+  { label: "Direção" },    // OUT_DIR
+  { label: "Velocidade" }, // OUT_VEL
+  { label: "LED Verde" },  // OUT_GREEN
+  { label: "LED Laranja" },// OUT_ORANJ
+  { label: "LED Vermelho" }// OUT_RED
+],
 
   plc: [
     { label: "Modelo: LK005R1 ", title: " na serial 3 conversor 485" },
@@ -358,14 +364,14 @@ const BT600 = {
   • Integração de dados com <b>armazenamento offline de até 1 milhão de pesagens.</b><br>
     `,
   entradas: [
-    { label: "Balança opcional", title: "Tem modalidade de pesagem com e sem sensor e estática e dinâmica." },
+    { label: "Balança LK050", title: "Possui modalidades de pesagem estática e dinâmica, com ou sem sensor" },
     { label: "AUX opcional" },
-     { label: "DIF" , title:"interditar a pesagem ou abiolitar"},
+     { label: "DIF" , title:"Interditar ou habilitar a pesagem através da entrada 3."},
     "N.A."
   ],
   
 saidas: [
-    { label: "Peso valido" },
+    { label: "Peso válido" },
     { label: "Rejeito" },
     "AUX",
     "N.A.",
