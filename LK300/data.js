@@ -32,8 +32,9 @@ const BASE_LK300 = {
     "USB"
   ],
   memoria: [
-    "Produtos: 800",
-    "Apontamentos: 1.000.000"
+    { label: "Produtos ", title: "800"},
+    { label: "Apontamentos ", title: "1.000.000 em memória estática",bold: true},
+ 
   ],
   images: {
     visao: "./img/placa.png",
@@ -87,8 +88,15 @@ const VP1200 = {
   ...PERFIL_VERIFICADORA,
   visao: `
       <b>Características gerais</b><br>
-      • Firmware para verificadora dinâmica de peso, com suporte a rejeito, aplicador e integração via rede.<br>
-      • VISOR: Compatível C_Visor9_00<br>
+    • Firmware para controle de sistemas de verificação dinâmica de peso e gerenciamento da produção em linha.<br>
+  • Impressão e verificação de etiquetas, com geração automática de códigos SSCC.<br>
+  • Apontamento e registro de dados de produção, permitindo o acompanhamento das operações.<br>
+  • Controle de sistemas de desvio e rejeição automática de produtos.<br>
+  • Integração com detectores de metais e outros equipamentos da linha de produção.<br>
+  • Gerenciamento integrado dos processos de pesagem, identificação e rastreabilidade dos produtos.<br>
+  • Comunicação e integração de dados via rede.<br>
+  • Integração de dados com <b>armazenamento offline de até 1 milhão de pesagens.</b><br>
+  • VISOR: Compatível com C_Visor9_00.<br>
     `,
   observacoes: [
     "Gravador de senha e número serial Rev5",
@@ -290,6 +298,12 @@ const MC5000 = {
 
   visao: `
       <b>Características gerais</b><br>
+  • Balança eletrônica multicabeças para sistemas de pesagem automática e distribuição de produtos.<br>
+  • Arquitetura modular com suporte a até 24 PLCs, permitindo o controle individual de cada bloco.<br>
+  • Cada PLC é responsável pelo gerenciamento dos motores de pesagem, acionamentos e sensores do respectivo bloco.<br>
+  • Sistema integrado de controle, supervisão e gerenciamento das operações de pesagem.<br>
+  • Interface compatível com o sistema VISOR.<br>
+  • Integração de dados para registro e gerenciamento das pesagens.<br>
     `,
 
   saidas: [
@@ -308,9 +322,10 @@ const VP4000 = {
 
   visao: `
   <b>Características gerais</b><br>
-  Verificador de peso com integração de dados via rede Ethernet, capaz de
-  realizar simultaneamente a pesagem em até 4 linhas, utilizando 4 balanças
-  de forma independente e simultânea.
+   • Verificador dinâmico de peso com integração de dados via rede Ethernet.<br>
+  • Capacidade de operar até 4 linhas de pesagem simultaneamente.<br>
+  • Controle independente de até 4 balanças, permitindo operações simultâneas em cada linha.<br>
+  • Sistema integrado para monitoramento, controle e gerenciamento das operações de pesagem.<br>
     `,
   entradas: [
     { label: "Sensor de caixa linha 1" },
@@ -337,14 +352,32 @@ const BT600 = {
 
   visao: `
   <b>Características gerais</b><br>
+  • Balança eletrônica para pesagem em sistemas de transporte aéreo tipo tendal.<br>
+  • Modelo BT600, destinado ao controle e gerenciamento de pesagens.<br>
+  • Interface compatível com o sistema VISOR.<br>
+  • Integração de dados com <b>armazenamento offline de até 1 milhão de pesagens.</b><br>
     `,
   entradas: [
-    { label: "Balança" },
-   
+    { label: "Balança opcional", title: "Tem modalidade de pesagem com e sem sensor e estática e dinâmica." },
+    { label: "AUX opcional" },
+     { label: "DIF" , title:"interditar a pesagem ou abiolitar"},
+    "N.A."
   ],
-
+  
+saidas: [
+    { label: "Peso valido" },
+    { label: "Rejeito" },
+    "AUX",
+    "N.A.",
+    "Sistema ON",
+    "Peso estável"
+  ],
   serial: [
-    { label: "DEB" },
+      "DEB",
+    "Barcode C1",
+    "Barcode C2",
+    "LK050",
+    { label: "Printer ", title: VP1200_NOTES.note1 },
   ],
  portas: [
     ...BASE_LK300.portas,

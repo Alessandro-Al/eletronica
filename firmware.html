@@ -248,7 +248,18 @@
       ).join("");
       container.innerHTML = html;
     }
-    const li = (item) => `<li>${item.label ?? item}${item.title ? `<span class="note">${item.title}</span>` : ""}</li>`;
+    //   const li = (item) => `<li>${item.label ?? item}${item.title ? `<span class="note">${item.title}</span>` : ""}</li>`;
+    const li = (item) => {
+      const texto = item.label ?? item;
+      let conteudo = "";
+      if (item.title) {
+        conteudo = item.bold
+          ? `<strong>${item.title}</strong>`
+          : `<span class="note">${item.title}</span>`;
+      }
+      return `<li>${texto}${conteudo}</li>`;
+    };
+
     // Renderiza listas de forma segura
     function renderSerial(value) {
       if (!Array.isArray(value)) return "";
